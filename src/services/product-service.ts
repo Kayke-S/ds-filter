@@ -1,9 +1,11 @@
-import type { ProductDTO } from "../model/product-model";
+import type { ProductDTO } from "../models/product-model";
 
 export function findByPrice(min: number, max: number): ProductDTO[] {
-  return products
+  const p = products
     .filter((p) => p.price >= min && p.price <= max)
     .sort((p1, p2) => p1.price - p2.price);
+
+  return p;
 }
 
 const products: ProductDTO[] = [

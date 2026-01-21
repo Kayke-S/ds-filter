@@ -23,12 +23,10 @@ export default function CardFilter({ onFilter }: Props) {
 
   function handleSubmit(event: any) {
     event.preventDefault();
+    
     onFilter(
-      queryParams.minPrice || 0,
-      queryParams.maxPrice || Number.MAX_VALUE,
+      (queryParams.minPrice || 0), (queryParams.maxPrice || Number.MAX_VALUE),
     );
-
-    console.log("passou");
   }
 
   return (

@@ -1,5 +1,17 @@
+import { useState } from "react";
 import Home from "./routes/Home";
+import { ContextProductCount } from "./utils/context-products";
 
 export default function App() {
-  return <Home />;
+  const [contextProductCount, setContextProductCount] = useState<number>(0);
+
+  return (
+    <>
+      <ContextProductCount.Provider
+        value={{ contextProductCount, setContextProductCount }}
+      >
+        <Home />
+      </ContextProductCount.Provider>
+    </>
+  );
 }

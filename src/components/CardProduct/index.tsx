@@ -1,4 +1,4 @@
-import type { ProductDTO } from "../../model/product-model";
+import type { ProductDTO } from "../../models/product-model";
 import "./styles.css";
 
 type Props = {
