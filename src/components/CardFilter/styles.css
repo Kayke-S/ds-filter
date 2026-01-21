@@ -1,0 +1,43 @@
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form input {
+  width: 200px;
+  height: 40px;
+  border: 1px solid var(--bg-color-tertiary);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::placeholder {
+  color: var(--placeholder-color);
+  font-size: 16px;
+}
+
+form button {
+  height: 40px;
+  width: 200px;
+  background-color: var(--bg-color-primary);
+  border-radius: 5px;
+  color: var(--font-color-primary);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+}
+
+.card-filter-container {
+  width: 100%;
+  height: 200px;
+  background-color: var(--bg-color-secondary);
+  padding: 20px;
+  border-radius: 5px;
+}

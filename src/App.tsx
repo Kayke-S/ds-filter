@@ -1,3 +1,5 @@
+import Home from "./routes/Home";
+
 export default function App() {
-  return <h2>olá</h2>;
+  return <Home />;
 }
