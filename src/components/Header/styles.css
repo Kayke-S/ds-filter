@@ -4,6 +4,7 @@ header {
     background-color: var(--bg-color-primary);
     display: flex;
     align-items: center;
+    padding-inline: 20px
 }
 
 nav {

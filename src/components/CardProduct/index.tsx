@@ -1,13 +1,18 @@
+import type { ProductDTO } from "../../model/product-model";
 import "./styles.css";
 
-export default function CardProduct() {
+type Props = {
+  product: ProductDTO;
+};
+
+export default function CardProduct({ product }: Props) {
   return (
     <div className="product-container">
       <div>
-        <h3>Pc Gamer Pro</h3>
+        <h3>{product.name}</h3>
         <div>
           <span className="product-currency">R$</span>
-          <span className="product-price">1200.00</span>
+          <span className="product-price">{product.price.toFixed(2)}</span>
         </div>
       </div>
     </div>

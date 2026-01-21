@@ -30,13 +30,13 @@ h3 {
   color: var(--font-color-secodary);
 }
 
-body {
+html, body {
   background-color: var(--bg-color-tertiary);
 }
 
 .container {
   width: 100%;
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
 }
 

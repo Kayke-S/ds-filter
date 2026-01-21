@@ -1,21 +1,18 @@
+import type { ProductDTO } from "../../model/product-model";
 import CardProduct from "../CardProduct";
 import "./styles.css";
 
-export default function CardListing() {
+type Props = {
+  products: ProductDTO[];
+};
+
+export default function CardListing({ products }: Props) {
   return (
     <div className="container">
       <div className="card-listing-container">
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
+        {products.map((p) => (
+          <CardProduct key={p.id} product={p} />
+        ))}
       </div>
     </div>
   );

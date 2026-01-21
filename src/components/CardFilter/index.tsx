@@ -1,15 +1,55 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
 import "./styles.css";
 
-export default function CardFilter() {
+type QueryParams = {
+  maxPrice?: number;
+  minPrice?: number;
+};
+
+type Props = {
+  onFilter: (min: number, max: number) => void;
+};
+
+export default function CardFilter({ onFilter }: Props) {
+  const [queryParams, setQueryParams] = useState<QueryParams>({});
+
+  function handleInputChange(event: any) {
+    const value = event.target.value;
+    const name = event.target.name;
+
+    setQueryParams({ ...queryParams, [name]: Number(value) });
+  }
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    onFilter(
+      queryParams.minPrice || 0,
+      queryParams.maxPrice || Number.MAX_VALUE,
+    );
+
+    console.log("passou");
+  }
+
   return (
     <div className="container m20">
       <div className="card-filter-container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
-            <input type="text"  placeholder="Preço mínimo"/>
+            <input
+              name="minPrice"
+              type="text"
+              placeholder="Preço mínimo"
+              onChange={handleInputChange}
+            />
           </div>
           <div>
-            <input type="text" placeholder="Preço máximo"/>
+            <input
+              name="maxPrice"
+              type="text"
+              placeholder="Preço máximo"
+              onChange={handleInputChange}
+            />
           </div>
           <div>
             <button>Filtrar</button>
